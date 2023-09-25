@@ -7,33 +7,41 @@ using UnityEngine;
 public class AutoShoot : MonoBehaviour
 {
     public GameObject projectilePrefab;
+
+    [SerializeField] private Transform CrossHairImage;
+
     public float projectileSpeed = 10.0f;
-    public float fireRate = 0.1f; // Shots per second
+    public float fireRate = 0.01f; // Shots per second
     private float nextFireTime;
 
 
-    void Update()
+    void Start()
     {
         StartCoroutine("Shoot");
     }
 
     IEnumerator Shoot()
     {
-        
-        GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        Rigidbody2D rb = newProjectile.GetComponent<Rigidbody2D>();
-
-        if (rb != null)
+        while (true)
         {
-            Vector2 shootDirection = (Input.mousePosition - transform.position).normalized;
-            rb.velocity = shootDirection * projectileSpeed;
-        }
-        else
-        {
-            Debug.LogError("Projectile prefab must have a Rigidbody2D component.");
-            Destroy(newProjectile);
-        }
+            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        yield return new WaitForSeconds(fireRate);
+            GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Rigidbody2D rb = newProjectile.GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                Debug.Log(Input.mousePosition);
+                Vector3 shootDirection = (pos - transform.position).normalized;
+                rb.velocity = shootDirection * projectileSpeed;
+            }
+            else
+            {
+                Debug.LogError("Projectile prefab must have a Rigidbody2D component.");
+                Destroy(newProjectile);
+            }
+
+            yield return new WaitForSeconds(fireRate);
+        }
     }
 }
