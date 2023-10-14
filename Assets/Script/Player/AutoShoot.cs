@@ -31,8 +31,10 @@ public class AutoShoot : MonoBehaviour
 
             if (rb != null)
             {
-                Debug.Log(Input.mousePosition);
                 Vector3 shootDirection = (pos - transform.position).normalized;
+                float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg;
+                if (angle < 0) { angle += 360; }
+                newProjectile.transform.eulerAngles = new Vector3(0, 0, angle);
                 rb.velocity = shootDirection * projectileSpeed;
             }
             else
