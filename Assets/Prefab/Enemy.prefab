@@ -98,6 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e22e036a7ac0c34dbd0cb5393f52653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  sightRange: 100
+  playerInSightRange: 0
 --- !u!58 &8757569762090135625
 CircleCollider2D:
   m_ObjectHideFlags: 0
