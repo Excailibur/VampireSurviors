@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - Spawner
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: Rocks
     uniqueID: 2150501857
+    locked: 0
+  - name: UI
+    uniqueID: 1456215435
     locked: 0

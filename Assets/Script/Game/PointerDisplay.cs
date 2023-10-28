@@ -33,7 +33,7 @@ public class PointerDisplay : MonoBehaviour
 
     public class HivePointer
     {
-        private float border = 50f;
+        private float border = 15f;
 
 
         private Vector3 targetPosition;
