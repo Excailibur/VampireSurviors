@@ -19,14 +19,19 @@ public class Enemy : MonoBehaviour
     //States
     [SerializeField] public float sightRange;
     [SerializeField] private bool playerInSightRange;
+    [SerializeField] private PlayerManager playerInstance;
 
-
+    private AudioSource source;
     //Find GameObject Components
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
     }
 
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         //State Controller and time controller
@@ -62,7 +67,14 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag.Equals("Bullet"))
         {
             Destroy(collision.gameObject);
+            source.Play();
             Destroy(gameObject);
+            
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("enemy hit player");
+            playerInstance.LoseHealth(playerInstance.getHealth(), playerInstance);
         }
     }
 }
