@@ -66,12 +66,14 @@ public class Enemy : MonoBehaviour
         Debug.Log("hit");
         if (collision.gameObject.tag.Equals("Bullet"))
         {
-            Destroy(collision.gameObject);
             source.Play();
+            Destroy(collision.gameObject);
+            
             Destroy(gameObject);
             
         }
-        if (collision.gameObject.tag == "Player")
+        // this line never gets activated and i dont know why
+        if (collision.gameObject.tag.Equals("Player"))
         {
             Debug.Log("enemy hit player");
             playerInstance.LoseHealth(playerInstance.getHealth(), playerInstance);
