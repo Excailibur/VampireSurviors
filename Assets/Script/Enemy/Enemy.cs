@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour
     //States
     [SerializeField] public float sightRange;
     [SerializeField] private bool playerInSightRange;
-    [SerializeField] private PlayerManager playerInstance;
 
     private AudioSource source;
     //Find GameObject Components
@@ -63,20 +62,12 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("hit");
         if (collision.gameObject.tag.Equals("Bullet"))
         {
             source.Play();
             Destroy(collision.gameObject);
             
             Destroy(gameObject);
-            
-        }
-        // this line never gets activated and i dont know why
-        if (collision.gameObject.tag.Equals("Player"))
-        {
-            Debug.Log("enemy hit player");
-            playerInstance.LoseHealth(playerInstance.getHealth(), playerInstance);
         }
     }
 }

@@ -103,7 +103,9 @@ MonoBehaviour:
   Enemey: {fileID: 2606656542489702805, guid: d86bfff2e6384ba47815919e655f88c9, type: 3}
   HiveHealth: 10
   SpawnRate: 3
-  SpawnRadius: 10
+  SpawnRadius: 5
+  HiveSpawnRate: 100
+  HiveSpawnRadius: 10
 --- !u!61 &-5156913452793722029
 BoxCollider2D:
   m_ObjectHideFlags: 0

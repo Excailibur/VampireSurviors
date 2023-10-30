@@ -56,3 +56,9 @@ TagManager:
   - name: Player and Enemies
     uniqueID: 2758511103
     locked: 0
+  - name: Rocks
+    uniqueID: 2150501857
+    locked: 0
+  - name: UI
+    uniqueID: 1456215435
+    locked: 0
