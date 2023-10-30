@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Enemy
-  - Spawner
+  - Hive
   layers:
   - Default
   - TransparentFX

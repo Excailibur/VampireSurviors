@@ -13,10 +13,11 @@ public class AutoShoot : MonoBehaviour
     public float projectileSpeed = 10.0f;
     public float fireRate = 0.01f; // Shots per second
     private float nextFireTime;
-
+    private AudioSource source;
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
         StartCoroutine("Shoot");
     }
 
@@ -28,7 +29,7 @@ public class AutoShoot : MonoBehaviour
 
             GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             Rigidbody2D rb = newProjectile.GetComponent<Rigidbody2D>();
-
+            source.Play();
             if (rb != null)
             {
                 Vector3 shootDirection = (pos - transform.position).normalized;
