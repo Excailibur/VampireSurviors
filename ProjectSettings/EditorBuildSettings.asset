@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/SubScene.unity
+    guid: 781d504e5bf786745a467b5cc1eddde7
+  - enabled: 1
+    path: Assets/Scenes/EdisonScene.unity
+    guid: ad6415ad56868204399a417304a8172e
   m_configObjects: {}

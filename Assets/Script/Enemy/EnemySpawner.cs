@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+
     [SerializeField] private Transform Origin;
     [SerializeField] private GameObject Enemey;
+    [SerializeField] private GameObject Hive;
+    [SerializeField] private float HiveSpawnRate = 10f;
+    [SerializeField] private float HiveSpawnRadius = 20f;
     [SerializeField] private int HiveHealth = 10;
     [SerializeField] private float SpawnRate = 10f;
     [SerializeField] private float SpawnRadius = 10f;
@@ -17,8 +21,8 @@ public class EnemySpawner : MonoBehaviour
         source = GetComponent<AudioSource>();
 
         //Spawn Enemies
-        InvokeRepeating("Spawn", 0f, SpawnRate);
-
+        InvokeRepeating("Spawn", SpawnRate, SpawnRate);
+        InvokeRepeating("SpawnHive", HiveSpawnRate, HiveSpawnRate);
     }
     void Update()
     {

@@ -1,19 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class CrossHair : MonoBehaviour
 {
-    [SerializeField] private RectTransform CrossHairImage;
+    [SerializeField] private Texture2D crossHair;
 
     private void Start()
     {
-        Cursor.visible = false;
+        Vector2 hotspot = Vector2.zero;
+        Cursor.SetCursor(crossHair, hotspot, CursorMode.Auto);
         Cursor.lockState = CursorLockMode.Confined;
-    }
-    private void Update()
-    {
-        //Set CrossHair anchor to mouse global position
-        CrossHairImage.anchoredPosition = Input.mousePosition;
     }
 }
