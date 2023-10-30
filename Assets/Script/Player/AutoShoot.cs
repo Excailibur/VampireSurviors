@@ -8,11 +8,9 @@ public class AutoShoot : MonoBehaviour
 {
     public GameObject projectilePrefab;
 
-    [SerializeField] private Transform CrossHairImage;
-
     public float projectileSpeed = 10.0f;
     public float fireRate = 0.01f; // Shots per second
-    private float nextFireTime;
+    //private float nextFireTime;
     private AudioSource source;
 
     void Start()

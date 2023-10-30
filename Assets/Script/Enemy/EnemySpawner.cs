@@ -8,13 +8,16 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform Origin;
     [SerializeField] private GameObject Enemey;
     [SerializeField] private GameObject Hive;
+
     [SerializeField] private float HiveSpawnRate = 10f;
     [SerializeField] private float HiveSpawnRadius = 20f;
     [SerializeField] private int HiveHealth = 10;
+
     [SerializeField] private float SpawnRate = 10f;
     [SerializeField] private float SpawnRadius = 10f;
     [SerializeField] private PlayerManager player;
     private AudioSource source;
+
     void Start()
     {
         //gets audio source
