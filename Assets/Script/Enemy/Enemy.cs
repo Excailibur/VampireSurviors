@@ -61,8 +61,8 @@ public class Enemy : MonoBehaviour
     //Gizmos for seeing attackRange and sightRange
     private void OnDrawGizmos()
     {
-        Handles.color = Color.red;
-        Handles.DrawWireDisc(transform.position,new Vector3(0, 0, 1), sightRange);
+        //Handles.color = Color.red;
+        //Handles.DrawWireDisc(transform.position,new Vector3(0, 0, 1), sightRange);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

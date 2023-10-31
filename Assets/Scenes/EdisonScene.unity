@@ -410,8 +410,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Origin: {fileID: 830060102}
   Enemey: {fileID: 2606656542489702805, guid: d86bfff2e6384ba47815919e655f88c9, type: 3}
-  SpawnRate: 10
-  SpawnRadius: 5
+  SpawnRate: 3
+  SpawnRadius: 30
 --- !u!1001 &83888026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3915,53 +3915,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &728912760
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 728912762}
-  - component: {fileID: 728912761}
-  m_Layer: 0
-  m_Name: PlayerManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &728912761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728912760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aeedd5d94d2aca4fbdf1f32a5ca72c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  player: {fileID: 830060094}
-  lossText: {fileID: 0}
---- !u!4 &728912762
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728912760}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.20999998, y: -0.24000001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745495212
 GameObject:
   m_ObjectHideFlags: 0
@@ -4486,6 +4439,7 @@ MonoBehaviour:
   health: 10
   player: {fileID: 830060094}
   lossText: {fileID: 1323530559}
+  HealthText: {fileID: 2043748514}
 --- !u!114 &830060097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4500,7 +4454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6004381475434801556, guid: ba39f805db8218547851cc52d4aca50f, type: 3}
   projectileSpeed: 50
-  fireRate: 0.5
+  fireRate: 0.2
 --- !u!61 &830060098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4585,7 +4539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e19e5601b912a44b656d1e4997362f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 8
 --- !u!212 &830060101
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7999,6 +7953,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5550900384870606609, guid: 47563aba2c630ec4b92a332bb66f045e, type: 3}
+      propertyPath: SpawnRate
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6942563327155517456, guid: 47563aba2c630ec4b92a332bb66f045e, type: 3}
       propertyPath: m_Name
       value: bug hive-base size
@@ -9447,7 +9405,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 107.7, y: -33.4}
+  m_AnchoredPosition: {x: 107.7, y: -33.399994}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2043748514
@@ -10379,7 +10337,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 29469159}
   - {fileID: 1786242913}
-  - {fileID: 728912762}
   - {fileID: 830060102}
   - {fileID: 745495213}
   - {fileID: 1302302802}
