@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
-    [SerializeField ]private Transform[] initialTargetPosition;
+    [SerializeField] private Transform[] initialTargetPosition;
     [SerializeField] private PointerDisplay pointerDisplay;
-
+    
     private void Start()
     {
         foreach (Transform targetPosition in initialTargetPosition)
