@@ -15,7 +15,6 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private float SpawnRate = 10f;
     [SerializeField] private float SpawnRadius = 10f;
-    [SerializeField] private PlayerManager player;
     private AudioSource source;
 
     void Start()
@@ -41,6 +40,14 @@ public class EnemySpawner : MonoBehaviour
         Vector3 SpawnPosition = Origin.position + new Vector3(RandomSpawnPosition.x, RandomSpawnPosition.y, 0);
 
         Instantiate(Enemey, SpawnPosition, Quaternion.identity);
+    }
+    private void SpawnHive()
+    {
+        Vector2 RandomSpawnPosition = Random.insideUnitCircle.normalized * HiveSpawnRadius;
+
+        Vector3 SpawnPosition = Origin.position + new Vector3(RandomSpawnPosition.x, RandomSpawnPosition.y, 0);
+
+        Instantiate(Hive, SpawnPosition, Quaternion.identity);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -101,11 +101,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Origin: {fileID: 3270711639019455707}
   Enemey: {fileID: 2606656542489702805, guid: d86bfff2e6384ba47815919e655f88c9, type: 3}
-  HiveHealth: 10
-  SpawnRate: 3
-  SpawnRadius: 5
-  HiveSpawnRate: 100
+  Hive: {fileID: 6942563327155517456}
+  HiveSpawnRate: 7.5
   HiveSpawnRadius: 10
+  HiveHealth: 15
+  SpawnRate: 3
+  SpawnRadius: 3
 --- !u!61 &-5156913452793722029
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ using UnityEngine.SocialPlatforms.Impl;
 public class Enemy : MonoBehaviour
 {
     private Transform player;                           //Player position
+    [SerializeField] private Sprite[] spriteArray;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private float speed = 5;
 
@@ -20,10 +22,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float sightRange;
     [SerializeField] private bool playerInSightRange;
 
+    
+
     private AudioSource source;
     //Find GameObject Components
     private void Awake()
     {
+        spriteRenderer.sprite = spriteArray[Random.Range(0, spriteArray.Length)];
         player = GameObject.Find("Player").transform;
     }
 
